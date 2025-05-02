@@ -1,16 +1,14 @@
-hello
-
-<mat-sidenav-container autosize>
-  <mat-sidenav
-    #sidenav
-    fixedInViewport="true"
-    mode="side"
-    opened="{{ isExpanded }}"
-  >
-    <app-sidenav
-      (toggleMenu)="toggleMenu()"
-      [isExpanded]="isExpanded"
-    ></app-sidenav>
+<mat-toolbar class="mat-elevation-z3">
+  <button mat-icon-button (click)="collapsed.set(!collapsed())">
+    <mat-icon>menu</mat-icon>
+  </button>
+</mat-toolbar>
+<mat-sidenav-container>
+  <mat-sidenav opened mode="side" [style.width]="250">
+  <app-custom-sidenav></app-custom-sidenav>
   </mat-sidenav>
-
+  <mat-sidenav-content class="content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
 </mat-sidenav-container>
+
