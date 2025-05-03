@@ -2,6 +2,7 @@ import {Component, computed, Input, signal} from '@angular/core';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
+import {RouterLink, RouterLinkActive, RouterModule} from '@angular/router';
 
 export type MenuItem = {
   icon: string;
@@ -10,7 +11,7 @@ export type MenuItem = {
 }
 @Component({
   selector: 'app-custom-sidenav',
-  imports: [CommonModule, MatListModule, MatIconModule],
+  imports: [CommonModule, MatListModule, MatIconModule, RouterLink, RouterLinkActive],
   templateUrl: './custom-sidenav.component.html',
   styleUrl: './custom-sidenav.component.css'
 })
@@ -27,8 +28,8 @@ sideNavCollapsed = signal(false);
     },
     {
       icon: 'video_library',
-      label: 'Content',
-      route: 'content'
+      label: 'locations',
+      route: 'locations'
     }
     ]);
 
