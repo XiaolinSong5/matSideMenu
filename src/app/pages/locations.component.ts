@@ -1,8 +1,12 @@
 import { Component } from "@angular/core";
+import {RouterOutlet} from '@angular/router';
 
 @Component({
   selector: "locations",
-  template: ` <p>Locations Page</p> `,
+  standalone: true,
+  imports: [RouterOutlet],
+  template: ` <h1>Locations Page</h1>
+  <router-outlet></router-outlet>`,
   styles: [],
 })
 export class LocationsComponent { }
